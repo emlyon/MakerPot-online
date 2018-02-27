@@ -1,0 +1,84 @@
+:root {
+    --main-bg-col: grey;
+    --segondary-bg-col: beige;
+    --thumb-pot-size: 200px;
+}
+
+html,
+body {
+    background-color: var(--main-bg-col);
+}
+
+#container {
+    background-color: var(--segondary-bg-col);
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+#header {
+    height: 100px;
+}
+
+#footer {
+    height: 100px;
+}
+
+
+#potpotList {
+    background-color: #FFFF99;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    grid-auto-rows: minmax(20px, auto);
+
+    grid-column: 1 / 3;
+    grid-row: 2/4;
+    padding: 20px;
+}
+
+.potpot {
+    background-color: grey;
+    position: relative;
+    margin: 1px;
+    text-align: center;
+
+    height: var(--thumb-pot-size);
+    width: var(--thumb-pot-size);
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.potpot:hover .image {
+    opacity: 0.3;
+}
+
+.potpot:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 20px;
+}
