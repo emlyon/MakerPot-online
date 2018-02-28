@@ -16,9 +16,8 @@ body {
 }
 
 #footer {
-    height: 150px;
     background-color: white;
-    padding-left: 50px;
+    padding: 2%;
 }
 
 #header img{
@@ -43,7 +42,14 @@ body {
     width: 50%;
     height: auto;
     transition: .5s ease;
-    backface-visibility: hidden;
+}
+
+.footer {
+    opacity: 1;
+    display: block;
+    width: 50%;
+    height: auto;
+    transition: .5s ease;
 }
 
 .image {
@@ -58,6 +64,11 @@ body {
     position: absolute;
     top: 60%;
     left: 20%;
+    text-align: left;
+    color: white;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .survol {
@@ -82,11 +93,4 @@ body {
 .survol figure:hover .text {
     transition: .5s ease;
     opacity: 1;
-}
-
-.text {
-    text-align: left;
-    color: white;
-    font-family: sans-serif;
-    font-size: 16px;
 }
