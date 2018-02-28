@@ -71,7 +71,6 @@ function computeData(data) {
 
 const getRandom = (min, max) => Math.round(Math.random() * (max - min) + min);
 
-
 const getTimeAgo = (prevTimestamp) => {
     let s = parseInt((Date.now() - prevTimestamp) / 1000);
     if (s < 60) {
@@ -82,7 +81,6 @@ const getTimeAgo = (prevTimestamp) => {
         return (`more than ${(s-(s%3600))/3600} hours ago`)
     }
 }
-
 
 ///First run of function
 getDatas();
