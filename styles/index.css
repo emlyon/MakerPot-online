@@ -30,7 +30,7 @@ body {
   padding-bottom: 5%;
 }
 
-#List {
+#list {
     background-color: white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
