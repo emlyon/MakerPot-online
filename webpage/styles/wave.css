@@ -1,0 +1,54 @@
+/*
+Wave based on :
+https://codepen.io/claudz1/pen/ypPWWx?editors=1100
+
+Add sub class lowWater, medWater or highWater for different water levels
+*/
+
+
+.wave{
+  position:relative;
+  width:100%;
+  height:100%;
+  background:#4973ff;
+  border-radius:0%;
+  box-shadow:inset 0 0 50px rgba(0,0,0,.5);
+}
+.wave:before,.wave:after{
+  content:'';
+  position:absolute;
+  width:200%;
+  height:200%;
+  /*top:0%;*/
+  left:50%;
+  transform:translate(-50%,-75%);
+  background:#000;
+}
+.lowWater:before,.lowWater:after{
+    top: 45%;
+}
+.medWater:before,.medWater:after{
+    top: 0%;
+}
+.highWater:before,.highWater:after{
+    top: -38%;
+}
+
+.wave:before{
+  border-radius:45%;
+  background:rgba(255,255,255,1);
+  animation:animate 5s linear infinite;
+}
+.wave:after{
+  border-radius:40%;
+  background:rgba(255,255,255,.5);
+  animation:animate 10s linear infinite;
+}
+@keyframes animate{
+  0%{
+     transform:translate(-50%,-75%) rotate(0deg);
+  }
+  100%{
+     transform:translate(-50%,-75%) rotate(360deg);
+  }
+}

@@ -73,19 +73,48 @@ function computeData(data) {
 
         if (element.stream != undefined) {
 
+            let html = "";
 
             let squareImg = (element.name == "waterlevel") ? "medias/img/water.jpg" : "medias/img/pot01.jpg";
 
-            let date = Date.parse(element.last_value_at);
-            let timeDif = parseInt((Date.now() - date) / 1000);
+            if (element.name == "waterlevel") {
 
-            let html = `<div class="potpot ${potpotName}">
-                        <img src="${squareImg}" alt="${element.name}" class="image" height="100%" width="100%">
+                let lvlClass = (element.stream.value == 2) ? "highWater" : (element.stream.value == 1) ? "medWater" : "lowWater";
+
+
+                html = `<div class="potpot ${potpotName}">
+                        <div class="wave ${lvlClass}"></div>
                         <div class="middle">
                             <div class="text">${element.name} = ${element.stream.value} </div>
                         </div>
                     </div>`;
 
+
+            } else if (element.name == "leds") {
+                console.log("toto");
+
+                let lightStatu = (element.stream.value == 1) ? "lightON" : "lightOFF";
+                
+                html = `<div class="potpot ${potpotName}">
+                        <div class="light ${lightStatu}"></div>
+                        <div class="middle">
+                            <div class="text">${element.name} = ${element.stream.value} </div>
+                        </div>
+                    </div>`;
+
+
+            } else {
+
+                let date = Date.parse(element.last_value_at);
+                let timeDif = parseInt((Date.now() - date) / 1000);
+
+                html = `<div class="potpot ${potpotName}">
+                        <img src="${squareImg}" alt="${element.name}" class="image" height="100%" width="100%">
+                        <div class="middle">
+                            <div class="text">${element.name} = ${element.stream.value} </div>
+                        </div>
+                    </div>`;
+            }
 
             dataList.innerHTML = dataList.innerHTML + (html.toString());
         }

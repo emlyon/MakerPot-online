@@ -1,0 +1,16 @@
+.light {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #4973ff;
+}
+
+.lightON {
+
+    background-color: #ffcc00;
+}
+
+.lightOFF {
+
+    background-color: #332900;
+}

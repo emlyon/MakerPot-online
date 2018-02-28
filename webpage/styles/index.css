@@ -1,7 +1,7 @@
 :root {
     --main-bg-col: grey;
     --segondary-bg-col: pink;
-    --thumb-pot-size: 200px;
+    --thumb-pot-size: ;
 }
 
 html,
@@ -28,7 +28,7 @@ body {
 .squareGrid {
     background-color: #FFFF99;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 0px;
     grid-auto-rows: minmax(20px, auto);
 
@@ -40,11 +40,14 @@ body {
 .potpot {
     background-color: grey;
     position: relative;
-    margin: 1px;
+    margin: 3px;
     text-align: center;
 
     height: var(--thumb-pot-size);
     width: var(--thumb-pot-size);
+    
+    overflow:hidden;
+
 }
 
 .image {
