@@ -18,6 +18,8 @@ body {
 #footer {
     background-color: white;
     padding: 2%;
+    padding-left: 6%;
+
 }
 
 #header img{
@@ -26,7 +28,7 @@ body {
 }
 
 #footer img{
-  padding-left: 5%;
+  padding-left: 1%;
   padding-bottom: 5%;
 }
 
@@ -46,15 +48,13 @@ body {
     display: block;
     width: 50%;
     height: auto;
-    transition: .5s ease;
 }
 
 .footer {
     opacity: 1;
-    display: block;
-    width: 50%;
+    display: inline-block;
+    width: 5%;
     height: auto;
-    transition: .5s ease;
 }
 
 .image {
