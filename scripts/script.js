@@ -52,24 +52,15 @@ function computeData(data) {
     dataList.innerHTML = ("");
 
     (data.feeds).forEach(function (element) {
-
-
-
         if (element.stream != undefined) {
-
-
-            let squareImg = (element.name == "waterlevel") ? "medias/img/water.jpg" : "medias/img/pot01.jpg";
-
             let date = Date.parse(element.last_value_at);
             let timeDif = parseInt((Date.now() - date) / 1000);
 
             let html = `<div class="potpot ${potpotName}">
-                        <img src="${squareImg}" alt="${element.name}" class="image" height="100%" width="100%">
                         <div class="middle">
                             <div class="text">${element.name} = ${element.stream.value} </div>
                         </div>
                     </div>`;
-
 
             dataList.innerHTML = dataList.innerHTML + (html.toString());
         }
