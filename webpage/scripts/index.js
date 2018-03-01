@@ -3,7 +3,7 @@ initPotList();
 
 function initPotList() {
 
-    var potContent = document.getElementById("potContent");
+    var potContent = document.getElementById("pot-content");
 
     potContent.innerHTML = (`<h2 class="titre" >Liste des potagers</h2>
             <p class="smallText">Cliquez sur un potager pour avoir les informations le concernant</p>
@@ -32,7 +32,7 @@ function newPotThumb(name, feeds, token) {
 
 function initPotData(name, feed, token) {
 
-    let potContent = document.getElementById("potContent");
+    let potContent = document.getElementById("pot-content");
 
     ///The group/feed name and the API token (could be smart to parse this on server side)
     let feedName = name;

@@ -1,6 +1,6 @@
 :root {
     --main-bg-col: grey;
-    --segondary-bg-col: pink;
+    --segondary-bg-col: white;
     --thumb-pot-size: ;
 }
 
@@ -24,6 +24,23 @@ body {
     height: 100px;
 }
 
+#pot-content{
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    
+}
+
+#pot-alert{
+    border-width: 2px;
+    border-color: red;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: yellow
+    
+}
+
 
 .squareGrid {
     background-color: #FFFF99;
@@ -38,17 +55,15 @@ body {
 }
 
 .potpot {
-    background-color: grey;
     position: relative;
     margin: 3px;
     text-align: center;
 
     height: var(--thumb-pot-size);
     width: var(--thumb-pot-size);
-    
-    overflow:hidden;
-
 }
+
+
 
 .image {
     opacity: 1;
@@ -60,7 +75,7 @@ body {
 }
 
 .middle {
-    transition: .5s ease;
+    transition: .9s ease;
     opacity: 0;
     position: absolute;
     top: 50%;
@@ -71,7 +86,7 @@ body {
 }
 
 .potpot:hover .image {
-    opacity: 0.3;
+    opacity: 0.8;
 }
 
 .potpot:hover .middle {

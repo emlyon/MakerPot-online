@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <!--  Meta  -->
+    <meta charset="UTF-8" />
+    <title>MakersPot !</title>
+
+    <!--  Styles  -->
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/wave.css">
+    <link rel="stylesheet" href="styles/light.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="header">
+            <button onclick="initPotList()">Logo EM (retour à la page des potpot)</button> amazing header
+        </div>
+        <div id="content">
+
+
+            <div id="pot-content">
+
+                <div id="pot-desc">
+
+                    <h2 id="potpotName">default</h2>
+                    <p id="potpotDescription">Mon potager situé temporairement dans la training room !</p>
+
+                    <div id="pot-alert">
+                        ATTENTION : Niveau d'eau bas !
+                    </div>
+
+                </div>
+
+
+
+                <div id="dataList" class="squareGrid">
+                    <div id="data-visu">
+                        <div class="superPotpot">
+                            <div class="light lightON"></div>
+
+                            <div class="wave highWater">
+                                <div id="bubble-spot"></div>
+                            </div>
+
+                            <div class="middle">
+                                <div class="text">waterlevel = 0 </div>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="footer">
+            Social media buttons
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/bubble.js"></script>
+    <!--   <script src="scripts/index.js"></script>-->
+</body>
+
+</html>
