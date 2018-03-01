@@ -1,17 +1,24 @@
 const messages = {
-    leds:{
-        lvl2: [ "i feel so fine", "..." ],
-        lvl1: [ "think about me", "need a drink", "..." ],
-        lvl0: [ "please, save me!", "in need of water right now!", "this is not fine!" ]
-    },
+    water:[
+         // lvl 0:
+         [ "please, save me!", "in need of water right now!", "this is not fine!" ],
+         // lvl 1:
+        [ "think about me", "need a drink" ],
+        // lvl 2:
+        [ "i feel so fine" ]
+    ],
 
-    leds:{
-        on: [ "you are my sunshine", "..." ],
-        off: [ "if you love me let me sleep", "..." ]
-    },
+    leds:[
+        // lvl 0:
+        [ "if you love me let me sleep" ],
+        // lvl 1:
+        [ "you are my sunshine" ]
+    ],
 
-    pump:{
-        on: [ "full power", "..." ],
-        off: [ "taking a break", "..." ]
-    }
+    pump:[
+        // lvl 0:
+        [ "taking a break" ],
+        // lvl 1:
+        [ "full power" ]
+    ]
 };
