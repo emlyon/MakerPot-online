@@ -79,7 +79,7 @@ header img:hover {
 }
 
 .info-text {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     bottom: 9%;
     left: 10%;
