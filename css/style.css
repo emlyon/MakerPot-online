@@ -2,33 +2,32 @@
     font-family: helvetica, arial, sans-serif;
 }
 
-body {
+html {
     background-color: white;
 }
+
 
 #container {
     position: relative;
     background-color: white;
     max-width: 1000px;
     margin: auto;
-    padding: 5%;
+    padding: 2% 5%;
 }
 
-#header {
+header {
     background-color: white;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
-#header img:hover {
-    opacity: 0.8;
+header img{
+    opacity: 1;
+    display: block;
+    width: 50%;
+    height: auto;
 }
 
-#footer {
-    background-color: white;
-    padding-top: 5%;
-}
-
-#footer img:hover {
+header img:hover {
     opacity: 0.8;
 }
 
@@ -58,20 +57,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15%;
-}
-
-.header {
-    opacity: 1;
-    display: block;
-    width: 50%;
-    height: auto;
-}
-
-.footer {
-    opacity: 1;
-    display: inline-block;
-    width: 5%;
-    height: auto;
 }
 
 .image {
@@ -139,7 +124,34 @@ body {
     opacity: 1;
 }
 
-input[type=email] {
+footer {
+    background-color: white;
+    margin-top: 10%;
+}
+
+footer img{
+    opacity: 1;
+    display: inline-block;
+    width: 5%;
+    height: auto;
+}
+
+footer img:hover {
+    opacity: 0.8;
+}
+
+footer .form{
+    margin-bottom: 60px;
+}
+
+footer p{
+    display: inline-block;
+    color: #E2001A;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer input[type=email] {
     width: 30%;
     border: solid 3px #E2001A;
     padding: 1%;
@@ -148,15 +160,15 @@ input[type=email] {
     font-size: 20px;
 }
 
-input::placeholder {
+footer input::placeholder {
     color: #E2001A;
     opacity: 0.5;
 }
-input[type=submit]:hover {
+footer input[type=submit]:hover {
     opacity: 0.5;
 }
 
-input[type=submit] {
+footer input[type=submit] {
     border: solid 3px #E2001A;
     background-color: #E2001A;
     opacity: 1;
@@ -165,13 +177,6 @@ input[type=submit] {
     cursor: pointer;
     color: white;
     font-family: helvetica, arial, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-#footer>p{
-    display: inline-block;
-    color: #E2001A;
     font-weight: bold;
     font-size: 20px;
 }

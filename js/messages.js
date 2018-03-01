@@ -1,8 +1,8 @@
 const messages = {
     leds:{
-        lvl0: [ "i feel so fine", "..." ],
-        lvl1: [ "think about me", "..." ],
-        lvl2: [ "please, save me!", "in need of water right now!" ]
+        lvl2: [ "i feel so fine", "..." ],
+        lvl1: [ "think about me", "need a drink", "..." ],
+        lvl0: [ "please, save me!", "in need of water right now!", "this is not fine!" ]
     },
 
     leds:{
