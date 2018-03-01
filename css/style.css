@@ -93,6 +93,25 @@ header img:hover {
     position: relative;
 }
 
+.survol .figure {
+	 background: #E2001A;
+}
+
+.survol .figure img {
+	 opacity: 1;
+	  -webkit-transition: .3s ease-in-out;
+	   transition: .3s ease-in-out;
+}
+
+.survol .figure:hover img {
+	 opacity: .5;
+}
+
+.survol .figure:hover .text {
+    transition: .5s ease;
+    opacity: 1;
+}
+
 .survol canvas{
     position: absolute;
     bottom: -20px;
