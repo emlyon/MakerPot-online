@@ -1,6 +1,6 @@
 ///The group/feed name and the API token (could be smart to parse this on server side)
-const username = "ste1";
-const apiToken = "0debe2dd12964d91841747106f174353"
+let split = location.pathname.split( '/' );
+const cred = creds[ split[ split.length-1 ].split( '.' )[ 0 ] ];
 
 // function sendData( data ) {
 //     let dataToSend = Object.entries( data ).map( d => d[ 0 ] + "=" + d[ 1 ] ).join( '&&' );
@@ -13,7 +13,7 @@ const apiToken = "0debe2dd12964d91841747106f174353"
 // }
 
 function getData() {
-    let link = `https://io.adafruit.com/api/groups/${ username }/receive.json?x-aio-key=${ apiToken }`;
+    let link = `https://io.adafruit.com/api/groups/${ cred.username }/receive.json?x-aio-key=${ cred.key }`;
     // console.log( link );
 
     fetch( link ).then( r => r.json() )
