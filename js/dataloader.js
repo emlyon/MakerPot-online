@@ -56,12 +56,10 @@ addEventListener( 'load', e => {
 
                 data.forEach( d => {
                     let val = + d.last_value;
-                    console.log( d.key, val );
 
                     switch( d.key ){
                         case 'waterlevel':
                             waterTarget = val * 100;
-                            console.log( waterTarget, messages.water[ val ] );
                             document.querySelector( '.water span' ).innerText = messages.water[ val ][ ~~( Math.random() * messages.water[ val ].length ) ].toUpperCase();
                             break;
 
