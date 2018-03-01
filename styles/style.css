@@ -1,6 +1,6 @@
 
 body {
-    background-color: grey;
+    background-color: white;
 }
 
 #container {
@@ -16,7 +16,7 @@ body {
     background-color: white;
     margin-bottom: 5%;
 }
-#header:hover{
+#header img:hover{
     opacity: 0.8;
 }
 
@@ -41,18 +41,18 @@ body {
 #list {
     background-color: white;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
 
 #list2 {
     position: absolute;
-    bottom: 15%;
+    bottom: 20%;
     left: 0%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10%;
+    grid-gap: 15%;
 }
 
 .header {
@@ -91,8 +91,8 @@ body {
 .info-text{
     opacity: 1;
     position: absolute;
-    bottom: 10%;
-    left: 19%;
+    bottom: 9%;
+    left: 10%;
     text-align: left;
     color: white;
     font-family: helvetica, arial, sans-serif;
@@ -103,13 +103,13 @@ body {
 .text-full {
     opacity: 1;
     position: absolute;
-    top: 10%;
-    left: 5%;
+    top: 5%;
+    left: 2.5%;
     text-align: left;
     color: #E2001A;
     font-family: helvetica, arial, sans-serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .survol {
@@ -134,3 +134,28 @@ body {
     transition: .5s ease;
     opacity: 1;
 }
+
+input[type=email] {
+    width: 30%;
+    border: solid 3px #E2001A;
+    padding: 1%;
+    cursor:pointer;
+    color: #E2001A;
+    font-weight: bold;
+    font-size: 20px;
+ }
+
+ input::placeholder {
+   color: #E2001A;
+ }
+
+ input[type=submit] {
+    border: solid 0px #E2001A;
+    background-color: white;
+    padding: 1%;
+    cursor:pointer;
+    color: #E2001A;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
