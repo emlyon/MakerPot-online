@@ -2,6 +2,9 @@
 Wave based on :
 https://codepen.io/claudz1/pen/ypPWWx?editors=1100
 
+Bubbles based on :
+https://codepen.io/arianalynn/pen/ZQVXab
+
 Add sub class lowWater, medWater or highWater for different water levels
 */
 :root {
@@ -11,7 +14,7 @@ Add sub class lowWater, medWater or highWater for different water levels
 }
 
 .superPotpot {
-    position: fixed;
+    position: relative;
 
     padding: 0px;
     margin: auto;
@@ -33,9 +36,9 @@ Add sub class lowWater, medWater or highWater for different water levels
     width: 65%;
     height: 65%;
 
-        transform: translate(26.5%, 26.5%);
+    transform: translate(26.5%, 26.5%);
     border-style: solid;
-    border-width: 1px;
+    border-width: 5px;
     border-color: white;
     background: #4973ff;
     border-radius: 50%;
@@ -57,7 +60,7 @@ Add sub class lowWater, medWater or highWater for different water levels
 
 .lowWater:before,
 .lowWater:after {
-    top: 45%;
+    top: 35%;
 }
 
 .medWater:before,
@@ -101,4 +104,16 @@ Add sub class lowWater, medWater or highWater for different water levels
     opacity: .4;
     position: absolute;
     border-radius: 100%
+}
+
+
+#data-visu{
+    margin: auto;
+}
+
+.infos-pot{
+    text-align: center;
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
 }
