@@ -8,7 +8,7 @@ https://codepen.io/arianalynn/pen/ZQVXab
 Add sub class lowWater, medWater or highWater for different water levels
 */
 :root {
-    --main-bg-col: grey;
+    --main-bg-col: white;
     --segondary-bg-col: white;
     --thumb-pot-size: auto ;
 }

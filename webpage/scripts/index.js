@@ -3,12 +3,9 @@ initPotList();
 
 function initPotList() {
 
-    var potContent = document.getElementById("pot-content");
+    var potContent = document.getElementById("content");
 
-    potContent.innerHTML = (`<h2 class="titre" >Liste des potagers</h2>
-            <p class="smallText">Cliquez sur un potager pour avoir les informations le concernant</p>
-            <div id="potList" class="squareGrid">
-            </div>`);
+    potContent.innerHTML = (`<div id="potList" class="squareGrid">`);
 
     var potList = document.getElementById("potList");
 
@@ -20,29 +17,70 @@ function initPotList() {
 
 function newPotThumb(name, feeds, token) {
 
-    return (`<div class="potpot ${name}">
+    return (`<div class="potpot carre-hover ${name}">
         <img src="medias/potThumb/${name}.jpg" alt="${name} picture" class="image" height="100%" width="100%">
         <div class="middle" onclick="initPotData('${name}','${feeds}','${token}')">
             <div class="text">${name}</div>
         </div>
     </div>`);
+
+
 }
 
 
 
 function initPotData(name, feed, token) {
 
-    let potContent = document.getElementById("pot-content");
+    let potContent = document.getElementById("content");
 
     ///The group/feed name and the API token (could be smart to parse this on server side)
     let feedName = name;
     let apiToken = token;
     const potpotName = name
 
-    potContent.innerHTML = (`<h2 id="potpotName">Loading datas</h2>
-            <p id="potpotDescription">Si ça attends trop longtemps il y a peu être un problème</p>
-            <div id="dataList" class="squareGrid">
-            </div>`);
+    /*    potContent.innerHTML = (`<h2 id="potpotName">Loading datas</h2>
+                <p id="potpotDescription">Si ça attends trop longtemps il y a peu être un problème</p>
+                <div id="dataList" class="squareGrid">
+                </div>`);*/
+    
+    let city = '';
+    
+    if ( name.startsWith('ecu') ){
+        city = "Ecully";
+    } else if (name.startsWith('ste')){
+        city = "Saint-Etienne";
+    } else if (name.startsWith('par')){
+        city = "Paris";
+    }
+
+
+    potContent.innerHTML = ` <div id="pot-content-background"></div>
+            <div id="pot-content">
+                <div id="pot-desc-bis">
+                    <p id="potpot-description">
+                        ${city}<br> makers'pot
+                        <br> #${name[3]}
+                    </p>
+                    <div id="pot-alert" hidden>
+                        ATTENTION : Niveau d'eau bas !
+                    </div>
+                </div>
+                <div id="data-visu">
+                    <div class="potpot">
+                        <div id="datas-block">
+                <div> Datas are loading, please wait</div>
+    
+                </div>
+                <br>
+                <form>
+                    <input type="email"><input type="submit" value="Submit">
+                </form>
+
+</div></div></div>`;
+
+
+
+
     getDatas(feed, token);
 
 }
@@ -58,67 +96,94 @@ function getDatas(feedName, apiToken) {
 function computeData(data) {
     console.log(data);
 
-    var potpotName = document.getElementById("potpotName");
-    var potpotDescription = document.getElementById("potpotDescription");
+    // var potpotName = document.getElementById("potpotName");
 
-    potpotName.innerHTML = data.name;
-    potpotDescription.innerHTML = data.description;
+    //  var potpotDescription = document.getElementById("potpotDescription");
 
-    var dataList = document.getElementById("dataList");
-    dataList.innerHTML = ("");
+    //  potpotName.innerHTML = data.name;
+    // potpotDescription.innerHTML = data.description;
 
-    (data.feeds).forEach(function (element) {
+    var dataBlocks = document.getElementById("datas-block");
+    dataBlocks.innerHTML = ("");
 
+    let waterBlock = '',
+        pumpBlock = '',
+        ledsBlock = '';
 
+        (data.feeds).forEach(function (element) {
 
-        if (element.stream != undefined) {
+            if (element.stream != undefined) {
 
-            let html = "";
+                let html = "";
 
-            let squareImg = (element.name == "waterlevel") ? "medias/img/water.jpg" : "medias/img/pot01.jpg";
+                let squareImg = (element.name == "waterlevel") ? "medias/img/water.jpg" : "medias/img/pot01.jpg";
 
-            if (element.name == "waterlevel") {
+                if (element.name == "waterlevel") {
 
-                let lvlClass = (element.stream.value == 2) ? "highWater" : (element.stream.value == 1) ? "medWater" : "lowWater";
-
-
-                html = `<div class="potpot ${potpotName}">
-                        <div class="wave ${lvlClass}"></div>
-                        <div class="middle">
-                            <div class="text">${element.name} = ${element.stream.value} </div>
-                        </div>
-                    </div>`;
+                    let redLvl = (element.stream.value == 2) ? 100 : (element.stream.value == 1) ? 50 : 10;
 
 
-            } else if (element.name == "leds") {
-                console.log("toto");
+                    waterBlock = `<div class="carre-data carre-hover water-level">
+                                <div class="carre-gris" style="height: ${100-redLvl}%;">
+                                </div>
+                                <div class="carre-rouge" style="height: ${redLvl}%;">
+                                </div>
+                                <div class="text-data">water level</div>
+                                <div class="middle" hidden>
+                                    <div class="text"> data unavailable </div>
+                                </div>
+                            </div>`;
 
-                let lightStatu = (element.stream.value == 1) ? "lightON" : "lightOFF";
-                
-                html = `<div class="potpot ${potpotName}">
-                        <div class="light ${lightStatu}"></div>
-                        <div class="middle">
-                            <div class="text">${element.name} = ${element.stream.value} </div>
-                        </div>
-                    </div>`;
+
+                } else if (element.name == "leds") {
+                    
+                    let buttonTxt = "";
+                    console.log("leds !!");
+                    if (element.stream.value == 1){
+                        redLvl= 100;
+                        buttonTxt = "Eteindre";
+                    } else {
+                        redLvl = 0;
+                        buttonTxt = "Allumer";
+                    }
+                    
+
+                    ledsBlock = `<div class="carre-data carre-hover light-statut">
+                                <div class="carre-gris" style="height: ${100-redLvl}%;">
+                                </div>
+                                <div class="carre-rouge" style="height: ${redLvl}%;">
+                                </div>
+                                <div class="text-data">light</div>
+                                <div class="middle">
+                                    <div class="text">${buttonTxt}</div>
+                                </div>
+                            </div>`;
 
 
-            } else {
+                } else if (element.name == "pump") {
+                    
 
-                let date = Date.parse(element.last_value_at);
-                let timeDif = parseInt((Date.now() - date) / 1000);
+                    let redLvl = (element.stream.value == 1) ? 100 : 0;
 
-                html = `<div class="potpot ${potpotName}">
-                        <img src="${squareImg}" alt="${element.name}" class="image" height="100%" width="100%">
-                        <div class="middle">
-                            <div class="text">${element.name} = ${element.stream.value} </div>
-                        </div>
-                    </div>`;
+                    pumpBlock = `<div class="carre-data carre-hover pump-statu">
+                                <div class="carre-gris" style="height: ${100-redLvl}%;">
+                                </div>
+                                <div class="carre-rouge" style="height: ${redLvl}%;">
+                                </div>
+                                <div class="text-data">pump</div>
+                                <div class="middle" hidden>
+                                    <div class="text"> Bonjour </div>
+                                </div>
+
+                            </div>`;
+
+
+                }
+
             }
 
-            dataList.innerHTML = dataList.innerHTML + (html.toString());
-        }
-
-    });
+        });
+    
+    dataBlocks.innerHTML = (waterBlock+pumpBlock+ledsBlock).toString();
 
 }
