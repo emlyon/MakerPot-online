@@ -157,6 +157,10 @@ footer p{
     font-size: 20px;
 }
 
+footer .made-by{
+    text-align: right;
+}
+
 footer input[type=email] {
     width: 30%;
     border: solid 3px #E2001A;
