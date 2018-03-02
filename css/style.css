@@ -157,6 +157,10 @@ footer .form{
     margin-bottom: 60px;
 }
 
+.form>p{
+    display: none;
+}
+
 footer p{
     display: inline-block;
     color: #E2001A;

@@ -79,6 +79,6 @@ addEventListener( 'load', e => {
             } )
             .catch( e => console.log( `error: ${ e }` ) );
 
-        setTimeout( getData, 60000 );
+        setTimeout( getData, 5 * 60000 );
     } )();
 } );
