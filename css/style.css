@@ -170,6 +170,11 @@ footer input[type=email] {
     font-size: 20px;
 }
 
+footer a{
+  color: #E2001A;
+  font-weight: bold;
+  font-size: 20px;
+}
 footer input::placeholder {
     color: #E2001A;
     opacity: 0.5;
